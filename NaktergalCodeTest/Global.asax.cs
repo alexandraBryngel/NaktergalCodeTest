@@ -12,7 +12,10 @@ namespace NaktergalCodeTest
     public class WebApiApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
-        {                      
+        {
+            
+            var Servicen = new NaktergalCodeTest.Services.NaktergalenService();
+            Servicen.ParseXmlAndWriteToConsole();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
